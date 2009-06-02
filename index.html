@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+	<title>Browsers, Flash and non-ascii keyboards</title>
+	<script type="text/javascript" charset="utf-8" src="javascript/swfobject.js"></script>
+</head>
+
+<body>
+
+	<h1>Browsers, Flash and non-latin text input</h1>
+
+	<p>Although the fairly well know WMODE set to opaque/transparent non-US keyboard bug that existed for many years has been fixed by most browser vendors there remains some territory that has not yet been successfully crossed.</p>
+
+	<p>Some non-latin languages (greek, russian, hebrew) still get a rough time with Flash keyboard input when WMODE is set to anything other than <var>window</var> (the default). Hitting a single key yields two garbled characters in Internet Explorer and in Chrome or Firefox the application shows output as if a US keyboard was used.</p>
+
+	<p>Below is a simple text box to try things out for yourself. First a flash object with wmode set to default (which is window), second with wmode set to opaque and finally transparent. There should be no difference between opaque and transparent.</p>
+
+	<h2>wmode = 'window'</h2>
+	<div id="windowed">
+		<p>a Flash textbox will load here with wmode = 'window'.</p>
+	</div>
+
+	<h2>wmode = 'opaque'</h2>
+	<div id="opaque">
+		<p>a Flash textbox will load here with wmode = 'opaque'.</p>
+	</div>
+
+	<h2>wmode = 'transparent'</h2>
+	<div id="transparent">
+		<p>a Flash textbox will load here with wmode = 'transparent'.</p>
+	</div>
+
+
+	<script type = "text/javascript">
+	var flashvars = {};
+	var attribute = {};
+	
+	swfobject.embedSWF("resources/textbox.swf", "windowed", "300", "140", "9.0.0",null, flashvars, {wmode: 'window'}, attribute);
+	swfobject.embedSWF("resources/textbox.swf", "opaque", "300", "140", "9.0.0",null, flashvars, {wmode: 'opaque'}, attribute);
+	swfobject.embedSWF("resources/textbox.swf", "transparent", "300", "140", "9.0.0",null, flashvars, {wmode: 'transparent'}, attribute);
+	</script>
+</body>
+</html>
