@@ -31,9 +31,7 @@
 
 		<h2>Browsers, Flash and non-latin text input</h2>
 
-		<p>Although the fairly well know WMODE set to opaque/transparent non-US keyboard bug that existed for many years has been fixed by most browser vendors there remains some territory that has not yet been successfully crossed.</p>
-
-		<p>Some non-latin languages (greek, russian, hebrew) still get a rough time with Flash keyboard input when WMODE is set to anything other than <var>window</var> (the default). Hitting a single key yields two garbled characters in Internet Explorer and in Chrome or Firefox the application shows output as if a US keyboard was used.</p>
+		<p>When the system keyboard language is set to a non-latin character set (e.g. Greek, Russian, Hebrew) using flash with WMODE set to anything other than <var>window</var> (the default) results in text appearing as-if the keyboard language is US.</p>
 
 		<p>Below is a simple text box to try things out for yourself. First a flash object with wmode set to default (which is window), second with wmode set to opaque and finally transparent. There should be no difference between opaque and transparent.</p>
 
